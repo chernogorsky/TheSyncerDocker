@@ -1,0 +1,8 @@
+colorlog
+requests
+nose
+pyzabbix
+httmock
+pyfakefs
+matplotlib
+coverage
