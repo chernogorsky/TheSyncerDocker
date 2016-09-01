@@ -6,3 +6,6 @@ httmock
 pyfakefs
 matplotlib
 coverage
+pyyaml
+networkx
+deepdiff
