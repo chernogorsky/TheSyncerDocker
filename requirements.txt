@@ -9,3 +9,9 @@ coverage
 pyyaml
 networkx
 deepdiff
+celery
+redis
+celery[redis]
+django
+django-nose
+djangorestframework
