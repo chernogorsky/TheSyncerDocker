@@ -5,9 +5,10 @@ MAINTAINER Michail Chernogorosky <chernogorsky@gmail.com>
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
-ONBUILD COPY requirements.txt /usr/src/app/
-ONBUILD RUN cd /usr/src/app \
-	    && pip3 install --upgrade pip; pip3 install  $(cat requirements.txt); echo 1 \
+COPY requirements.txt /usr/src/app/
+RUN cd /usr/src/app  \
+	    && pip3 install --upgrade pip \
+	    && pip3 install  $(cat requirements.txt) \
 	    && cd /usr/local/bin \
 	    && ln -f -s pip3.5 pip \
 	    && ln -f -s pip3.5 pip3 
