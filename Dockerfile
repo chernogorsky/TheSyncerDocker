@@ -7,10 +7,10 @@ WORKDIR /usr/src/app
 
 ONBUILD COPY requirements.txt /usr/src/app/
 ONBUILD RUN cd /usr/src/app \
-	    && pip3 install --upgrade pip; pip3 install  $(cat requirements.txt); echo 1
+	    && pip3 install --upgrade pip; pip3 install  $(cat requirements.txt); echo 1 \
 	    && cd /usr/local/bin \
 	    && ln -f -s pip3.5 pip \
-	    && ln -f -s pip3.5 pip3 \
+	    && ln -f -s pip3.5 pip3 
 
 #ln -f -s python3.5 python \
 # && pip3.5 install --no-cache-dir $(cat requirements.txt) || echo 'OK'; \
