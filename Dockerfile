@@ -6,11 +6,11 @@ RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
 ONBUILD COPY requirements.txt /usr/src/app/
-ONBUILD RUN pip3 install --upgrade pip; \
-	    pip3 install --no-cache-dir $(cat requirements.txt) || echo 'OK'; \
-	    cd /usr/local/bin \
+ONBUILD RUN cd /usr/local/bin \
             && ln -f -s pip3.5 pip \
     	    && ln -f -s python3.5 python \
+	    && pip install --upgrade pip \
+	    && pip install --no-cache-dir $(cat requirements.txt) || echo 'OK'; \
 
 ONBUILD COPY . /usr/src/app
 
