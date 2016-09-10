@@ -6,7 +6,8 @@ RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
 ONBUILD COPY requirements.txt /usr/src/app/
-ONBUILD RUN pip3 install --no-cache-dir $(cat requirements.txt) || echo 'OK'
+ONBUILD RUN pip3 install --upgrade pip; \
+	    pip3 install --no-cache-dir $(cat requirements.txt) || echo 'OK'
 ONBUILD COPY . /usr/src/app
 
 # runtime dependencies
