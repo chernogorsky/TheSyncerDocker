@@ -10,4 +10,4 @@ ONBUILD RUN pip3 install --no-cache-dir $(cat requirements.txt) || echo 'OK'
 ONBUILD COPY . /usr/src/app
 
 # runtime dependencies
-RUN yum install epel-release &&  yum install redis
+RUN yum install -y epel-release &&  yum install -y redis
