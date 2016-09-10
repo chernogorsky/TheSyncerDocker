@@ -9,6 +9,7 @@ ONBUILD COPY requirements.txt /usr/src/app/
 ONBUILD RUN cd /usr/local/bin \
             && ln -f -s pip3.5 pip \
     	    && ln -f -s python3.5 python \
+	    && cd /usr/src/app \
 	    && pip install --upgrade pip \
 	    && pip install --no-cache-dir $(cat requirements.txt) || echo 'OK'; \
 
