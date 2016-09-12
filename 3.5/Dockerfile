@@ -14,8 +14,8 @@ ENV PYTHON_VERSION 3.5.2
 # if this is called "PIP_VERSION", pip explodes with "ValueError: invalid truth value '<VERSION>'"
 ENV PYTHON_PIP_VERSION 8.1.2
 
-RUN yum -y install tk-devel tk \
-    && yum clean all 
+RUN yum -y install tk-devel tk || echo 1\
+    && yum clean all || echo 2
 
 RUN set -x \
     && mkdir -p /usr/src/python \
