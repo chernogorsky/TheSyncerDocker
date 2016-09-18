@@ -1,6 +1,8 @@
 FROM mbaltrusitis/centos-buildpack-deps:7
 MAINTAINER Matthew Baltrusitis "matthew@baltrusitis.com"
 
+# yum install zlib-devel bzip2-devel sqlite sqlite-devel openssl-devel
+
 # http://bugs.python.org/issue19846
 # > At the moment, setting "LANG=C" on a Linux system *fundamentally breaks Python 3*, and that's not OK.
 ENV LANG C.UTF-8
